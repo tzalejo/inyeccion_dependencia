@@ -1,7 +1,7 @@
 <?php
 /**
  * Como vemos la inyectamos la dependencia
- * MySQLDatabase mediante el constructor y la dependencia Request
+ * DataBase mediante el constructor y la dependencia Request
  * se la inyectamos al método store de la clase. Con esto logramos
  * desacoplar un poco las clases ya que nuestra clase UserController
  * no tiene la responsabilidad de crear ella misma los objetos.
@@ -74,5 +74,3 @@ $sqlite = new SqliteDatabase();
 $msyqlUser = new UserController($msyql);
 $postgresUser = new UserController($postgres);
 $sqliteUser = new UserController($sqlite);
-
-

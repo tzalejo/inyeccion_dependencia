@@ -1,7 +1,7 @@
 <?php
 /**
  * Podemos ver, que la clase UserController tiene varias dependencias(*),
- * primero depende de la clase MySQLDatabase para crear una instancia de la misma
+ * primero depende de la clase DataBase para crear una instancia de la misma
  * y utilizarla para insertar un usuario. Luego el método store() depende de la clase
  * Request para recibir la información que viene del exterior y también depende de la
  * clase User para crear el objeto usuario que luego será persistido.
@@ -12,7 +12,7 @@
  */
 namespace App;
 
-use MySQLDatabase;
+use DataBase;
 use Request;
 use User;
 
@@ -22,7 +22,7 @@ class UserController
 
   public function __construct()
   {
-    $this->db = new MySQLDatabase();
+    $this->db = new DataBase();
   }
 
   public function store()
